@@ -46,6 +46,7 @@ func (d *Day) Part2(filepath string) string {
 
 	return strconv.Itoa(d.calibration(filepath, whitelist, mapWhitelist))
 }
+
 func (d *Day) calibration(filepath string, whitelist []string, whitelistValues map[string]int) (total int) {
 	for _, line := range strings.Split(d.GetInput(filepath), "\n") {
 		numbers := make([]int, 0)
