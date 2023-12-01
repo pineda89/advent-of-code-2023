@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#divShowHide").hide();
+        });
+
+        $(document).ready(function(){
+            $("#btnShowHide").click(function(){
+                $("#divShowHide").toggle();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+<h1>{{.Day}}</h1>
+
+{{.Readme}}
+
+<br/>
+
+<input type="button" value="Show input" id="btnShowHide"/>
+
+<div id="divShowHide" style="border-style: solid;">
+    {{range .Input}} {{.}}<br/> {{end}}
+</div>
+
+<h2>part1 solution: {{.Part1}}</h2>
+
+<h2>part2 solution: {{.Part2}}</h2>
+
+</body>
+</html>
