@@ -1,6 +1,7 @@
 package day02
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -48,10 +49,11 @@ func (d *Day) getMaxs(line string) map[string]int {
 	maxValues := make(map[string]int)
 	for _, gamePhase := range strings.Split(strings.Split(line, ": ")[1], "; ") {
 		for _, cubeData := range strings.Split(gamePhase, ", ") {
-			splittedCubeData := strings.Split(cubeData, " ")
-			parsedValue, _ := strconv.Atoi(splittedCubeData[0])
-			if oldValue := maxValues[splittedCubeData[1]]; parsedValue > oldValue {
-				maxValues[splittedCubeData[1]] = parsedValue
+			var parsedValue int
+			var key string
+			fmt.Sscanf(cubeData, "%d %s", &parsedValue, &key)
+			if oldValue := maxValues[key]; parsedValue > oldValue {
+				maxValues[key] = parsedValue
 			}
 		}
 	}
