@@ -16,7 +16,7 @@ func TestPart1RealData(t *testing.T) {
 func TestPart1TestData(t *testing.T) {
 	d := &Day{}
 
-	result := d.Part1("input_testdata_part1.txt")
+	result := d.Part1("input_testdata.txt")
 
 	assert.Equal(t, "374", result)
 }
